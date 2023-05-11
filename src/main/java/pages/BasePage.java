@@ -34,11 +34,6 @@ public class BasePage {
         // ожидает ...секуд, потом проверяет наличие эл-та
     }
 
-//    public boolean shouldHaveElement(WebElement element, int time) {
-//        return new WebDriverWait(driver, Duration.ofSeconds(time)).until(ExpectedConditions.textToBePresentInElement(element, text));
-//        // ожидает ...секуд, потом проверяет наличие эл-та
-//    }
-
     // скрол
     public void clickWithJSExecutor(WebElement element, int x, int y) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
