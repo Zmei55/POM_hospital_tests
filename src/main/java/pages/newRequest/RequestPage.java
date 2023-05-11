@@ -10,7 +10,7 @@ public class RequestPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(id = "newRequestBtn")
+    @FindBy(id = "modalFindPatBtn")
     WebElement findPatientBtn;
 
     public PatientPage findPatient() {

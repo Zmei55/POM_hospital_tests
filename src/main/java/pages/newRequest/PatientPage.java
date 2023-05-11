@@ -44,7 +44,7 @@ public class PatientPage extends BasePage {
         return this;
     }
 
-    @FindBy(xpath = "(//div[@class='css-rpav3i'])[0]")
+    @FindBy(id = "selectPatLink")
     WebElement selectPatientBtn;
 
     public PatientPage selectPatient() {
