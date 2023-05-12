@@ -25,17 +25,35 @@ public class PatientPageTests extends TestBase {
     }
 
     @Test
-    public void findAllPatientsByNamePositiveTest() {
+    public void findPatientByNamePositiveTest() {
         new PatientPage(driver)
                 .findPatient("Sofia Wagner", "", "")
                 .assertPatientByData("Sofia Wagner");
     }
 
     @Test
-    public void findAllPatientsByCardNumberPositiveTest() {
+    public void findPatientByCardNumberPositiveTest() {
         new PatientPage(driver)
                 .findPatient("", "", "446640502")
                 .assertPatientByData("446640502");
+    }
+
+    @Test
+    public void secondaryPatientInfoPositiveTest() {
+        new PatientPage(driver)
+                .findPatient("Sofia Wagner", "", "")
+                .selectPatient()
+                .morePatInfo()
+                .assertPatSecondaryInfo();
+    }
+
+    @Test
+    public void deletePatientPositiveTest() {
+        new PatientPage(driver)
+                .findPatient("Sofia Wagner", "", "")
+                .selectPatient()
+                .deletePatient()
+                .assertOfRemovalOfPatient();
     }
 
     @Test

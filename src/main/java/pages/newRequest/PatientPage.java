@@ -52,6 +52,38 @@ public class PatientPage extends BasePage {
         return this;
     }
 
+    @FindBy(id = "morePatInfoBtn")
+    WebElement morePatInfoBtn;
+
+    public PatientPage morePatInfo() {
+        click(morePatInfoBtn);
+        return this;
+    }
+
+    @FindBy(xpath = "//h4[contains(.,'Wohnort')]")
+    WebElement wohnort;
+
+    public PatientPage assertPatSecondaryInfo() {
+        Assert.assertTrue(wohnort.isDisplayed());
+        return this;
+    }
+
+    @FindBy(id = "clearPatInfo")
+    WebElement clearPatInfoBtn;
+
+    public PatientPage deletePatient() {
+        click(clearPatInfoBtn);
+        return this;
+    }
+
+    @FindBy(id = "modalFindPatBtn")
+    WebElement reqPatBtn;
+
+    public RequestPage assertOfRemovalOfPatient() {
+        Assert.assertTrue(reqPatBtn.isDisplayed());
+        return new RequestPage(driver);
+    }
+
     @FindBy(xpath = "//p[contains(.,'Patient mit solchen Daten wurde nicht gefunden')]")
     WebElement error;
 
